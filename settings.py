@@ -1,9 +1,9 @@
 
 # DISCORD BOT
 
-DISCORD_TOKEN = 'NTg3NzA1Nzg0Nzg4MzIwMzUy.GfZzAG.YiN0NqpOstRsZy6PF3hhAJKr0ThJzwg_pdz53c'
+DISCORD_TOKEN = '⚠'
 
-BOT_ACTIVITY = 'DNIs y comandos'
+BOT_ACTIVITY = 'DNIs y alertas'
 
 LOGIN_MESSAGE = '¡Iniciado sesión como {bot}!'
 SYNC_COMMANDS_MESSAGE = 'Se han sincronizado {n} comandos.'
