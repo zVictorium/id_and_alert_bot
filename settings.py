@@ -84,7 +84,7 @@ ID_MESSAGE_ID = 'DNI'
 # Crear DNI
 
 WRONG_NAME = 'El nombre o el apellido no puede contener espacios.'
-WRONG_BIRTH = 'No has introducido una fecha de nacimiento válida. (dd-mm-yyyy)'
+WRONG_BIRTH = 'No has introducido una fecha de nacimiento válida. (dd/mm/yyyy)'
 WRONG_GENDER = 'No has introducido un género válido. ("Hombre", "Mujer" u "Otro")'
 
 # Editar DNI
