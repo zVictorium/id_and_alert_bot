@@ -5,7 +5,7 @@ from settings import *
 from utils import Embed
 
 
-class IDHandler():
+class HandleID():
 
     def check_name(self, name: str):
         contain_spaces = ' ' in name
@@ -15,8 +15,8 @@ class IDHandler():
 
     def check_date(self, date: str):
         try:
-            date = datetime.strptime(date, '%d-%m-%Y')
-            date = f'{date.day}-{date.month}-{date.year}'
+            date = datetime.strptime(date, '%d/%m/%Y')
+            date = f'{date.day}/{date.month}/{date.year}'
             return date
         except ValueError:
             return None
@@ -40,27 +40,19 @@ class IDHandler():
                 return False
         return True
 
-    def id_message(self, mention: str, id: dict):
-        message = DNI_MESSAGE.format(
-            user=mention,
-            name=id[NAME],
-            surname=id[SURNAME],
-            birth=id[BIRTH],
-            gender=id[GENDER],
-            id=id[ID]
-        )
-        return message
-
-    def id_embed(self, mention: str, id: dict):
+    def get_embed_id(self, user, id: dict):
         fields = [
-            ('**Nombre:**', f'`{id[NAME]}`', True),
-            ('**Apellido:**', f'`{id[SURNAME]}`', True),
-            ('**Nacimiento:**', f'`{id[BIRTH]}`', True),
-            ('**Género:**', f'`{id[GENDER]}`', True),
-            ('**DNI:**', f'`{id[ID]}`', True)
+            (ID_MESSAGE_FULLNAME, f'{id[NAME]} {id[SURNAME]}', False),
+            (ID_MESSAGE_GENDER, id[GENDER], False),
+            (ID_MESSAGE_BIRTH, id[BIRTH], False),
+            (ID_MESSAGE_ID, id[ID], False)
         ]
         embed = Embed(
-            title=f'__**DNI de {id[NAME]} {id[SURNAME]}**__',
-            fields=fields
+            title=ID_MESSAGE_TITLE.format(name=id[NAME], surname=id[SURNAME]),
+            fields=fields,
+            author_name=ID_MESSAGE_AUTHOR.format(username=user.display_name),
+            author_icon_url=user.avatar.url,
+            icon_url=user.avatar.url,
+            timestamp=True
         )
         return embed

@@ -1,9 +1,9 @@
 from .data import Data
 from .embed import Embed
-from .dni import IDHandler
+from .dni import HandleID
 
 __all__ = [
     'Data',
     'Embed',
-    'IDHandler'
+    'HandleID'
 ]
