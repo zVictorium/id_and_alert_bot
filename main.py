@@ -1,3 +1,5 @@
+import os
+
 import discord
 from discord import app_commands as cmds
 from discord.ext import commands as discord_commands
@@ -51,9 +53,10 @@ async def create_id(
 
 
 @bot.tree.command(name=SHOW_ID_COMMAND, description=SHOW_ID_DESCRIPTION)
-async def show_id(interaction: discord.Interaction):
+@cmds.describe(usuario=USER_DESCRIPTION)
+async def show_id(interaction: discord.Interaction, usuario: discord.User = None):
     print(COMMAND_LOG.format(command=SHOW_ID_COMMAND, user=interaction.user))
-    await commands.show_id(interaction)
+    await commands.show_id(interaction, usuario)
 
 
 @bot.tree.command(name=EDIT_ID_COMMAND, description=EDIT_ID_DESCRIPTION)
@@ -155,6 +158,7 @@ async def neutral_alert(interaction: discord.Interaction):
 
 
 if __name__ == '__main__':
+    os.system('cls' if os.name == 'nt' else 'clear')
     if DISCORD_LOGS:
         bot.run(DISCORD_TOKEN)
     else:

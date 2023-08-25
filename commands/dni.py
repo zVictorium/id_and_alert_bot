@@ -38,13 +38,15 @@ async def create_id(interaction: discord.Interaction, name: str, surname: str, b
     await interaction.response.send_message(content=message, embed=embed, ephemeral=True)
 
 
-async def show_id(interaction: discord.Interaction):
-    user_id = interaction.user.id
+async def show_id(interaction: discord.Interaction, user: discord.User):
+    if not user:
+        user = interaction.user
+    user_id = user.id
     id = data.get_value(user_id)
     message = None
     embed = None
     if id:
-        embed = handler.get_embed_id(interaction.user, id)
+        embed = handler.get_embed_id(user, id)
         ephemeral = False
     else:
         message = MISSING_ID

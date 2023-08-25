@@ -72,7 +72,7 @@ NEUTRAL_ALERT_DESCRIPTION = 'Muestra la alerta neutra.'
 
 # Ver DNI
 
-MISSING_ID = 'No has creado un DNI aún.'
+MISSING_ID = 'No se ha creado un DNI aún.'
 
 ID_MESSAGE_TITLE = '__**DNI de {name} {surname}**__'
 ID_MESSAGE_AUTHOR = 'DNI de {username}'
@@ -85,7 +85,7 @@ ID_MESSAGE_ID = 'DNI'
 
 WRONG_NAME = 'El nombre o el apellido no puede contener espacios.'
 WRONG_BIRTH = 'No has introducido una fecha de nacimiento válida. (dd/mm/yyyy)'
-WRONG_GENDER = 'No has introducido un género válido. ("Hombre", "Mujer" u "Otro")'
+WRONG_GENDER = 'No has introducido un género válido. ("Masculino", "Femenino" u "Otro")'
 
 # Editar DNI
 
@@ -183,7 +183,7 @@ GENDER = 'gender'
 ID = 'id'
 
 VALID_GENDERS = [
-    'Hombre',
-    'Mujer',
+    'Masculino',
+    'Femenino',
     'Otro'
 ]
