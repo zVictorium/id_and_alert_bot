@@ -1,7 +1,7 @@
 
 # DISCORD BOT
 
-DISCORD_TOKEN = 'NTg3NzA1Nzg0Nzg4MzIwMzUy.GfZzAG.YiN0NqpOstRsZy6PF3hhAJKr0ThJzwg_pdz53c'
+DISCORD_TOKEN = 'your_discord_bot_token_here'
 
 BOT_ACTIVITY = 'DNIs y alertas'
 
