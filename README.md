@@ -1,4 +1,4 @@
-# Bot de Discord con sistem de DNI y alertas
+# Bot de Discord con sistema de DNI y alertas
 
 Este es un bot de Discord desarrollado en Python utilizando la librería discord.py.
 
